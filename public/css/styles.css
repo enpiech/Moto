@@ -1,0 +1,19 @@
+#list {
+    margin-top: 5%;
+}
+
+.info {
+    background: #e51f2c;
+    color: #fefcfc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.commandBtn {
+    display: inline-block;
+}
+
+.container {
+    margin-top: 5%;
+}
