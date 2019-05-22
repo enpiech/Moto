@@ -1,5 +1,7 @@
 <?php
-include __DIR__.'/../config/config.php';
+
+$_DIR_ = dirname(dirname(__FILE__));
+include_once $_DIR_.'\config\config.php';
 
 class dbMysqli {
     public static $conn  = NULL;

@@ -1,5 +1,7 @@
 <?php
-include_once __DIR__ . '/../db/db_mysqli.php';
+
+$_DIR_ = dirname(dirname(__FILE__));
+include_once $_DIR_.'\db\db_mysqli.php';
 
 class userMysqli extends dbMysqli {
     public function readAllUser() {

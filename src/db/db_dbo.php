@@ -1,5 +1,6 @@
 <?php
-include_once "config/config.php";
+$_DIR_ = dirname(dirname(__FILE__));
+include_once $_DIR_."\config\config.php";
 
 class db_dbo
 {
@@ -28,7 +29,6 @@ class db_dbo
     {
         $stmt = self::$conn->prepare($sql);
         if ($data != false) {
-            var_dump($data);
             return $stmt->execute($data);
         }
         return $stmt->execute();

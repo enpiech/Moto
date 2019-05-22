@@ -1,5 +1,7 @@
 <?php
-include 'db/db_dbo.php';
+
+$_DIR_ = dirname(dirname(__FILE__));
+include_once $_DIR_.'\db\db_dbo.php';
 
 class userPDO extends db_dbo
 {

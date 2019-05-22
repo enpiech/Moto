@@ -1,11 +1,14 @@
 <?php
-    include './models/userMysqli.php';
-    include_once 'models/userPDO.php';
+$_DIR_ = dirname(dirname(__FILE__));
+include_once $_DIR_ . '\src\models\userMysqli.php';
+include_once $_DIR_ . '\models\userPDO.php';
 
     $db_type = "mysqli";
     if (isset($_GET["db_type"])) {
         $db_type = $_GET["db_type"];
     }
+
+    $_POST["db_type"] = $db_type;
 
     if ($db_type == "mysqli") {
         $user_db = new userMysqli();
@@ -41,12 +44,11 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="./public/js/sitescript.js"></script>
+    <script src="public/js/sitescript.js"></script>
 
     <title>Document</title>
 </head>
 <body>
-
 
     <div class="container">
         <div class="dropdown" id="db_type">
@@ -61,7 +63,7 @@
             </div>
         </div>
         <label form="input"><h2>INPUT</h2></label>
-        <form action="./modify_user.php" method="post" id="input">
+        <form action="modify_user.php" method="post" id="input">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input class="form-control" id="name" type="text" name="name" placeholder="Enter your name here! ex: John Smith" value='<?php echo $name; ?>'>

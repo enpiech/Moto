@@ -1,0 +1,4 @@
+motoPDO
+ [x] Read all moto
+ [x] Create moto with duplicate i d
+
